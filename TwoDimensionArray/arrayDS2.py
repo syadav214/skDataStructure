@@ -1,4 +1,5 @@
 #!/bin/python
+# maximum hourglass sum.
 
 import sys
 

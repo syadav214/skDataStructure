@@ -1,3 +1,5 @@
+//Calculate maximum hourglass sum
+
 process.stdin.resume();
 process.stdin.setEncoding('ascii');
 

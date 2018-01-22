@@ -1,3 +1,4 @@
+//reverse order of array
 process.stdin.resume();
 process.stdin.setEncoding('ascii');
 

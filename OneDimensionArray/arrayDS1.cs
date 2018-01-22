@@ -1,4 +1,5 @@
-﻿using System;
+﻿//reverse order of array
+using System;
 
 namespace ConsoleApplication1
 {
