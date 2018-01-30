@@ -4,7 +4,7 @@ import sys
 
 def leftRotation(a, d):
     finalArray = [[] for _ in range(lenArray)]
-    for i in range(len(a)):
+    for i in xrange(len(a)):
         index = i - d
         if index < 0:
             index = len(a) + index
