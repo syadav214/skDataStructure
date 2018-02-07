@@ -1,4 +1,8 @@
-#Insert Node At a specific Position
+"""
+Delete Node At a specific Position
+If Position is 0 then return the nextnode. [So, setting next node to head Position means delete head node.]
+else need to set nextnode in recursive with decrementing Position.
+"""
 
 class Node:
     def __init__ (self,data,next):
@@ -12,18 +16,6 @@ class LinkedList:
     def addNode(self, data):
         node = Node(data,self.currnode)
         self.currnode = node
-    
-    def InsertNth(head,data,position):
-        if head is None or position == 0:
-            return Node(data,head)
-        else:
-            cur_pos = 1
-            cur_node = head
-            while cur_node.next and cur_pos < position:
-                cur_node = cur_node.next
-                cur_pos += 1
-            cur_node.next = Node(data,cur_node.next)
-        return head
     
     def Delete(head, position):        
         if position == 0:

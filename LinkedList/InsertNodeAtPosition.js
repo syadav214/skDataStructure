@@ -5,7 +5,7 @@ function Node(data, next) {
     this.next = next;
 }
 
-function LinkedList(currNode) {
+function LinkedList() {
     this.currNode = null;
 }
 
