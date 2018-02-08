@@ -24,9 +24,3 @@ class LinkedList:
                 cur_pos += 1
             cur_node.next = Node(data,cur_node.next)
         return head
-    
-    def Delete(head, position):        
-        if position == 0:
-            return head.next
-        head.next = Delete(head.next, position - 1)
-        return head

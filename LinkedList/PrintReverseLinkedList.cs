@@ -1,4 +1,4 @@
-//Delete Node At a specific Position
+//Print Linked List in reserve order.
 
 using System;
 
@@ -27,17 +27,15 @@ namespace ConsoleApplication1
         {
             Nodes _nodes = new Nodes(data, this.currnode);
             this.currnode = _nodes;
-        }
+        }        
 
-        Nodes DeleteNodeAtPos(Nodes head,int Pos)
+        void PrintReverse(Nodes head)
         {
-            if(Pos == 0)
+            if(head!=null)
             {
-                return head.nextnode;
+                PrintReverse(head.nextnode);
+                Console.WriteLine(head.data);
             }
-
-            head.nextnode = DeleteNodeAtPos(head.nextnode,Pos-1);
-            return head;
         }
     }
 }
