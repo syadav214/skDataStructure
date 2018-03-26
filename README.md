@@ -1,4 +1,4 @@
-Programs in C#, NodeJS and Python to practice DataStructure
+Programs in C#, NodeJS and Python to practice Algorithm and DataStructure
 
 
 
