@@ -8,9 +8,9 @@ def aVeryBigSum(n, ar):
 
     for x in xrange(half):
         sum = sum + ar[x] + ar[n-1-x]
-        if oddArrayLen == True and half == x + 1:
-            sum = sum + ar[half]            
-    
+                  
+    if oddArrayLen == True:
+            sum = sum + ar[half]  
     return sum
 
 

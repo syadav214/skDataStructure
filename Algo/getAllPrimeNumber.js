@@ -1,0 +1,1 @@
+//Given a number N, N>=2. Print all prime numbers <= N.
