@@ -1,5 +1,10 @@
 const fs = require("fs");
 
+const cr = require('crypto');
+let xd = cr.randomBytes(20).toString('hex');
+console.log(xd, xd.length);
+
+
 
 function test() {
     var x = 0;
@@ -13,7 +18,7 @@ function test() {
 }
 
 test();
-return;
+
 
 fs.readFile('test.js', function(err, data) {
     if (data) {
