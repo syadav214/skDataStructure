@@ -1,31 +1,19 @@
-A = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
-li = 0;
-ri = 0;
-maxSum = A[0];
-maxSumTillLast_i = A[0]
+var max1 = -2147483648,
+    min1 = 2147483648,
+    max2 = -2147483648,
+    min2 = 2147483648;
+console.log(max1, min1);
 
+var A = [-1000000000, -1000000000, -1000000000, -1000000000, -1000000000];
 
-
-for (i = 1; i < A.length; i++) {
-    var newStart = false;
-    var num = A[i];
-    maxSumTillLast_i = maxSumTillLast_i + num;
-
-    if (num >= maxSumTillLast_i) {
-        maxSumTillLast_i = num;
-        newStart = true;
-    }
-
-    if (maxSumTillLast_i >= maxSum) {
-        maxSum = maxSumTillLast_i;
-        if (newStart) {
-            li = i;
-        }
-        ri = i;
-    }
+for (i = 0; i < A.length; i++) {
+    max1 = Math.max(max1, A[i] + i);
+    min1 = Math.min(min1, A[i] + i);
+    max2 = Math.max(max2, A[i] - i);
+    min2 = Math.min(min2, A[i] - i);
 }
 
-console.log(maxSum);
+console.log(Math.max(max1 - min1, max2 - min2));
 
 return;
 
