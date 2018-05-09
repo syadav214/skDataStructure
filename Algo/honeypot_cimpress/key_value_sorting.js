@@ -32,6 +32,7 @@ s.sort(function(a, b) {
 for (i in s) {
     console.log(s[i].key);
 }
-//var arr = Object.keys(y).map(function(key) { return obj[key]; });
-//let min = Math.min(...arr);
-//let max = Math.max(...arr);
+
+var arr = Object.keys(y).map(function(key) { return obj[key]; });
+let min = Math.min(...arr);
+let max = Math.max(...arr);
