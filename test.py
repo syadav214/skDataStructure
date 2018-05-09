@@ -1,17 +1,12 @@
-B = [1, 2, 7, 9]
-B = [1, 2, 4, 4]
-sum = 8
-
-hashTable = []
-matched = False
-for i in range(len(B)):
-	comp = sum - B[i]
-	if comp in hashTable:
-		matched = True
+n = int(raw_input())
+ar = map(int, raw_input().strip().split())
+ar.sort(reverse=True)
+count = 0
+max_num = max(ar)
+print  ar.count(max(ar))
+for i in range(0,len(ar)):
+	if ar[i] == max_num:
+		count +=1
+	else:
 		break
-
-	hashTable.append(comp)
-	print comp, B[i], matched
-
-print 'matched=',matched
-
+print count
