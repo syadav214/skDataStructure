@@ -1,67 +1,19 @@
-from functools import reduce
-
-
-def lcm(a: int, b: int) -> int:
-    return a * b // gcd(a, b)
-
-
-def lcm_list(lst: list) -> int:
-    return reduce(lcm, lst)
-
-
-def gcd(a: int, b: int) -> int:
-    while a % b != 0:
-        a, b = b, (a % b)
-    return b
-
-
-def gcd_list(lst: list) -> int:
-    return reduce(gcd, lst)
-
-def getGCD(numbers):
-	firstFactors = []
-	finalFactors = []
-	for i in range(len(numbers)):
-		for j in range(2,numbers[i]+2):
-			if numbers[i] % j == 0:
-				if i == 0:
-					firstFactors.append(j)
-				elif i == 1 and j in firstFactors:
-					finalFactors.append(j)	
-	return max(finalFactors)
+def breakingRecords(score):
+	min_score = score[0]
+	max_score = score[0]
+	min_counter = 0
+	max_counter = 0
+	for i in range(1,len(score)):
+		if min_score > score[i] :
+			min_score = score[i]
+			min_counter +=1
+		if max_score < score[i]:
+			max_score = score[i]
+			max_counter +=1
 	
-def getLCM(numbers):
-	max_num = max(numbers)
-	lcm =0
-	while True:
-		lcmChecker = []
-		for i in range(len(numbers)):
-			if max_num % numbers[i] == 0:
-				lcmChecker.append(1)
-			else:
-				lcmChecker.append(0)
-		
-		if 0 in lcmChecker:
-			max_num +=1
-		else:
-			lcm = max_num
-			break
-	return lcm
+	return [max_counter,min_counter]
 
-def getTotalX(a, b):
-	lcm_value = getLCM(a)
-	gcd_value = getGCD(b)
-	counter = 0
-	multiple_of_lcm = lcm_value
-	while multiple_of_lcm <= gcd_value:
-		if gcd_value % multiple_of_lcm ==0:
-			counter += 1
-		
-		multiple_of_lcm += lcm_value
-	
-	print(counter)
-
-if __name__ =="__main__":
-	a = [2,4]
-	b = [16,32,96]
-	getTotalX(a,b)
+if __name__ == "__main__":
+	a = [3 ,4 ,21, 36, 10 ,28 ,35, 5, 24 ,42]
+	a = [10, 5 ,20 ,20 ,4 ,5, 2, 25, 1]
+	print breakingRecords(a)
