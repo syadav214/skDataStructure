@@ -1,19 +1,15 @@
-def breakingRecords(score):
-	min_score = score[0]
-	max_score = score[0]
-	min_counter = 0
-	max_counter = 0
-	for i in range(1,len(score)):
-		if min_score > score[i] :
-			min_score = score[i]
-			min_counter +=1
-		if max_score < score[i]:
-			max_score = score[i]
-			max_counter +=1
-	
-	return [max_counter,min_counter]
+def solve(n, s, d, m):
+	count = 0
+	for i in range(n):
+		print i, m+i, s[i:m+i]
+		total = sum(s[i:m+i])
+		if total == d:
+			count +=1	
+	return count
 
 if __name__ == "__main__":
-	a = [3 ,4 ,21, 36, 10 ,28 ,35, 5, 24 ,42]
-	a = [10, 5 ,20 ,20 ,4 ,5, 2, 25, 1]
-	print breakingRecords(a)
+	n = 5
+	s = [1, 2, 1, 3, 2]
+	d = 3
+	m = 2
+	print solve(n,s,d,m)
