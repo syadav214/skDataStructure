@@ -1,6 +1,7 @@
 class ItemOrder {
-    constructor(obj) {
+    constructor(obj, qty) {
         this.Product = obj;
+        this.qty = qty;
     }
 }
 
@@ -14,33 +15,43 @@ class Item extends Product {
     constructor(id) {
         super();
         this.id = id;
-        this.name = 'Item';
+    }
+
+    getName(id) {
+        return this.name;
+    }
+
+    getPrice(id) {
+        return this.price;
     }
 }
 
 //child 2
 class Discount extends Product {
-    constructor(id) {
+    constructor(id, name) {
         super();
         this.id = id;
-        this.name = 'Discount';
+        this.name = name;
+    }
+
+    getName(id) {
+        return this.name;
+    }
+
+    getDiscount(id) {
+        return this.discount;
     }
 }
 
 var ListOfOrder = [];
 var i = new Item(1);
-//console.log(i.name)
+var d = new Discount(10);
 
-var im = new ItemOrder(i);
-//console.log(im);
-ListOfOrder.push(im);
+var io = new ItemOrder(i, 1);
+ListOfOrder.push(io);
 
-var d = new Discount(1);
-//console.log(d.name);
-
-im = new ItemOrder(d);
-//console.log(im);
-ListOfOrder.push(im);
+io = new ItemOrder(d, 1);
+ListOfOrder.push(io);
 
 console.log(ListOfOrder);
 console.log(ListOfOrder[0].Product);
