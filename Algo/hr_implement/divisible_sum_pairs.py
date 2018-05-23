@@ -1,3 +1,7 @@
+"""
+You are given an array of  integers,N , and a positive integer, a0,a1....aN.
+Find and print the number of  (i,j) pairs where i<j  and  ai+ aj is divisible by k .
+"""
 def divisibleSumPairs(n, k, ar):
 	pairs = 0
 	for i in range(n):
@@ -12,3 +16,4 @@ if __name__ == "__main__":
 	k = 3
 	ar = [1, 3 ,2, 6 ,1 ,2]
 	divisibleSumPairs(n, k, ar)
+
