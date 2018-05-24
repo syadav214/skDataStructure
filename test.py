@@ -1,14 +1,18 @@
-def divisibleSumPairs(n, k, ar):
-	pairs = 0
-	for i in range(n):
-		for j in range(i+1,n):
-			if (i < j) and ((ar[i]+ar[j]) % k == 0):
-				pairs +=1
-			
-	print pairs
+def migratoryBirds(ar):
+	max_val = max(ar)
+	count_hash = {}	
+	for i in range(len(ar)):
+		if ar[i] in count_hash:
+			prev_count = count_hash[ar[i]]
+			count_hash[ar[i]] = prev_count + 1
+		else:
+			count_hash[ar[i]] = 1
+	
+	max_occurance_type = max(count_hash,key=count_hash.get)
+	print max_occurance_type
+	print count_hash[max_occurance_type]
+
 
 if __name__ == "__main__":
-	n = 6
-	k = 3
-	ar = [1, 3 ,2, 6 ,1 ,2]
-	divisibleSumPairs(n, k, ar)
+	ar = [1, 4 ,4, 4 ,5, 3,3]
+	migratoryBirds(ar)
