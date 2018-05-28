@@ -1,3 +1,9 @@
+"""
+Anna and Brian are sharing a meal at a restuarant and they agree to split the bill equally. 
+Brian wants to order something that Anna is allergic to though, and they agree that Anna won't pay for that item.
+ Brian gets the check and calculates Anna's portion. You must determine if his calculation is correct.
+"""
+
 """Leap year before 1918 in Russia (Julian calender) was determine by divisble by 4
 	After 1918 i.e. Gregorian calender => leap years determine with Divisible by 400 OR
 	Divisible by 4 and not divisible by 100.
