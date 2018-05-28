@@ -10,11 +10,11 @@ Brian wants to order something that Anna is allergic to though, and they agree t
 """
 
 def bonAppetite(n,k,bill,b):
-	exp= (sum(bill[:k]) + sum(bill[k+1:]))/2
-	if exp == b:
+	exp_per_head= (sum(bill[:k]) + sum(bill[k+1:]))/2
+	if exp_per_head == b:
 		print('Bon Appetit')
 	else:
-		print(int(b-exp)) # int used to get value without decimal
+		print(int(b-exp_per_head)) # int used to get value without decimal
 
 
 if __name__ == "__main__":
