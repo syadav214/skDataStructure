@@ -11,3 +11,6 @@ myHash_Object['two'] = [2];
 myHash_Object['three'] = [3, 30, 300];
 
 console.log(myHash_Object);
+
+//deleting a key
+delete myHash_Object['one'];
