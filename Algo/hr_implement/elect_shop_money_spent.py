@@ -1,5 +1,3 @@
-elect_shop_money_spent.py
-
 """
 Monica wants to buy a keyboard and a USB drive from her favorite electronics store. 
 The store has several models of each. 
