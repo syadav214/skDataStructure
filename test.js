@@ -23,4 +23,4 @@ function countingValleys(n, s) {
     return vally_counter;
 }
 
-console.log(countingValleys(10, 'UDUUUDUDDD'));
+console.log(countingValleys(10, 'UDUUUDUDDDT'));
