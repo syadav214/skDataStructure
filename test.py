@@ -3,17 +3,10 @@ You are given queries in the form of x, y, z and representing the respective pos
 Complete the function to return the appropriate answer to each query, which will be printed on a new line.
 """
 
-def catAndMouse(x, y, z):
-	diff_x_z = abs(x - z )
-	diff_y_z = abs(y - z)
-
-	if diff_x_z == diff_y_z:
-		return 'Mouse C'
-	elif diff_x_z < diff_y_z:
-		return 'Cat A'
-	else:
-		return 'Cat B'
+def formingMagicSquare(s):
+	return 12
 
 
 if __name__ == "__main__":
-	print catAndMouse(1,2,3)
+	s = [[4, 9, 2], [3, 5, 7], [8, 1, 5]]
+	print formingMagicSquare(s)
