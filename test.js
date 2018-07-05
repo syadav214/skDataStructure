@@ -1,14 +1,12 @@
-function viralAdvertising(n){
-    let ads=5,
-    likes=0,
-    refer = 3;
+function saveThePrisoner(nOfPrisoners, candies, startingPoint) {
+    let a = 0;
+    a = ((startingPoint-1) + candies) % nOfPrisoners;
 
-    for(let i=1;i<=n;i++){
-        let tmp_like = Math.floor(ads/2);
-        likes = likes +  tmp_like;
-        ads = tmp_like*refer;
+    if(a==0) {
+        return nOfPrisoners;
+    } else {
+        return a;
     }
-    return likes;
 }
 
-console.log('likes',viralAdvertising(3));
+console.log(saveThePrisoner(5,2,1));
