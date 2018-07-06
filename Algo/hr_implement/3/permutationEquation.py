@@ -13,5 +13,5 @@ def permutationEquation(p):
 
 if __name__ == "__main__":
 	p = [2,3,1]
-	#p = [5,2,1,3,4]
+	p = [5,2,1,3,4]
 	print permutationEquation(p)
