@@ -7,8 +7,9 @@ def circularArrayRotation(a, k, queries):
 	result = []
 	
 	for q in range(len(queries)):
-		#subtract query's index to rotation and take remainder from array's length
-		index = ((queries[q])- k) % array_a_len
+		#subtract current query to rotation and take remainder from array's length
+		index = (queries[q]- k) % array_a_len
+		print (queries[q]- k), index
 		result.append(a[index])
 	
 	return result

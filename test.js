@@ -1,12 +1,15 @@
-function saveThePrisoner(nOfPrisoners, candies, startingPoint) {
-    let a = 0;
-    a = ((startingPoint-1) + candies) % nOfPrisoners;
+function circularArrayRotation(a, k, queries) {
+    let result=[],array_a_len = a.length;
 
-    if(a==0) {
-        return nOfPrisoners;
-    } else {
-        return a;
+    for(let i=0;i<queries.length;i++){
+        let index = ((queries[i]- k) % array_a_len);        
+        result.push(a[index]);
     }
+    return result;
 }
 
-console.log(saveThePrisoner(5,2,1));
+let a = [1, 2, 3],
+k = 2,
+queries = [0,1,2];
+
+console.log(circularArrayRotation(a,k,queries));

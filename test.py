@@ -2,19 +2,16 @@
 For each array, perform a number of right circular rotations and return the value of the element at a given index.
 """
 
-def circularArrayRotation(a, k, queries):
-	array_a_len = len(a)	
+def permutationEquation(p):
 	result = []
-	
-	for q in range(len(queries)):
-		#subtract query's index to rotation and take remainder from array's length
-		index = ((queries[q])- k) % array_a_len
-		result.append(a[index])
-	
+	for i in range(len(p)):
+		x = i + 1
+		first_index = p.index(x)
+		x = p.index(first_index + 1)
+		result.append(x+1)	
 	return result
 
 if __name__ == "__main__":
-	a = [1, 2, 3]
-	k = 2
-	queries = [0,1,2]
-	print circularArrayRotation(a, k, queries)
+	p = [2,3,1]
+	p = [5,2,1,3,4]
+	print permutationEquation(p)
