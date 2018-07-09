@@ -9,7 +9,7 @@ def jumpingOnClouds(c, k):
 	for i in range(0,len(c),k):
 		subVal = 1
 		if c[i] == 1:
-			subVal += 2	
+			subVal += 2
 		E = E - subVal	
 	return E
 
