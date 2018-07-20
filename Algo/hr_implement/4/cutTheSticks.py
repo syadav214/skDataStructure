@@ -10,7 +10,7 @@ def cutTheSticks(arr):
     while len_arr > 0:
         smallest = min(arr)
         newArr = []
-        for i in range(len_arr):
+        for i in range(len(arr)):
             if smallest != arr[i]:
                 newArr.append(arr[i]-smallest)        
         arr = newArr
