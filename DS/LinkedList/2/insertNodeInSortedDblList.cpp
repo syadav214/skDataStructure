@@ -65,7 +65,11 @@ class DoublyLinkedList
     DoublyLinkedListNode *SortedInsert(DoublyLinkedListNode *head, int data)
     {
         DoublyLinkedListNode *temp = head;
+
+        //Initializing the new Node
         DoublyLinkedListNode *newNode = new DoublyLinkedListNode(data);
+
+        // If thr List is empty point the head to the new node
         if (temp == NULL)
         {
             temp = newNode;
@@ -73,11 +77,17 @@ class DoublyLinkedList
             return head;
         }
 
+        //Check if the data in the new node is bigger
+        // or smaller than each node in the list. if it's
+        // bigger, move to the next node in the list.
+        // If it's the last node stop.
         while ((newNode->data > temp->data) && temp->next != NULL)
         {
             temp = temp->next;
         }
 
+        //If it was the last node and the data is still
+        //bigger this new node will be added to the tail
         if (temp->next == NULL && newNode->data > temp->data)
         {
             newNode->prev = temp;
@@ -85,15 +95,21 @@ class DoublyLinkedList
             return head;
         }
 
+        //If this was smaller than the node pointed by temp
+        //we add new node before it
         newNode->prev = temp->prev;
         temp->prev = newNode;
         newNode->next = temp;
 
+        //If there are elements before we need to link its
+        //next to our new node
         if (newNode->prev != NULL)
         {
             newNode->prev->next = newNode;
         }
 
+        //If there are no elements before it, our node
+        //is the first one so we point the head/temp to it
         if (newNode->prev == NULL)
         {
             temp = newNode;

@@ -1,4 +1,3 @@
-// Print the number of letter a's in the first n letters of infinite string
 
 #include <iostream>
 #include <vector>
