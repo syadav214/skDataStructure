@@ -1,6 +1,3 @@
-/* Compile with c++11
-g++ -std=c++11 test.cpp
-*/
 // Organizing Containers of Balls with proper swapping
 #include <iostream>
 #include <vector>
