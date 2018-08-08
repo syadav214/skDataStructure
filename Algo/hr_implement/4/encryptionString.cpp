@@ -1,6 +1,4 @@
-/* Compile with c++11
-g++ -std=c++11 test.cpp
-*/
+// encrypting a string with few rules
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -38,6 +36,7 @@ string encryption(string s)
 
 int main()
 {
+    //cout << encryption("haveaniceday") << endl;
     cout << encryption("chillout") << endl;
     return 0;
 }
