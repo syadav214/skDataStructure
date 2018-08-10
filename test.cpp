@@ -2,42 +2,22 @@
 g++ -std=c++11 test.cpp
 */
 #include <iostream>
-#include <cmath>
 using namespace std;
 
-string encryption(string s)
+void kaprekarNumbers(int p, int q)
 {
-    double sqrt_s = sqrt(s.length());
-    int ceil_s = ceil(sqrt_s);
-    int floor_s = floor(sqrt_s);
-    cout << ceil_s << " " << floor_s << endl;
     string result = "";
-    if ((ceil_s * floor_s) < s.length())
+
+    if (result != "")
     {
-        floor_s = ceil_s;
+        result = "sdsd";
     }
 
-    cout << ceil_s << " " << floor_s << endl;
-
-    for (int i = 0; i < ceil_s; i++)
-    {
-        int x = i;
-        for (int j = 0; j < floor_s; j++)
-        {
-            if (x < s.length())
-            {
-                result += s[x];
-                x += ceil_s;
-            }
-        }
-        if (i < ceil_s - 1)
-            result += " ";
-    }
-    return result;
+    cout << result << endl;
 }
 
 int main()
 {
-    cout << encryption("chillout") << endl;
+    kaprekarNumbers(1, 100);
     return 0;
 }
