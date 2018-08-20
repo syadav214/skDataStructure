@@ -1,6 +1,5 @@
-/* Compile with c++11
-g++ -std=c++11 test.cpp
-*/
+// Kaprekar number example => If n=9, and n2=81. This gives us 1+8 = 9 , the original number.
+
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
