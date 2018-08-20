@@ -1,6 +1,7 @@
 /* Compile with c++11
 g++ -std=c++11 test.cpp
 */
+
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
@@ -11,6 +12,7 @@ vector<int> kaprekarNumbers(int p, int q)
     long int sq;
     int len;
     vector<int> kkNumbers;
+    bool invalid = true;
     for (int i = p; i <= q; i++)
     {
         sq = (long int)i * i;
@@ -19,8 +21,18 @@ vector<int> kaprekarNumbers(int p, int q)
         reminder_of_square = sq % (int)pow(10, len);
         divided_value = sq / (int)pow(10, len);
         if (reminder_of_square + divided_value == i)
+        {
+            invalid = false;
+            cout << i << " ";
             kkNumbers.push_back(i);
+        }
     }
+
+    if (invalid)
+    {
+        cout << "INVALID RANGE";
+    }
+
     return kkNumbers;
 }
 
