@@ -1,6 +1,6 @@
-/* Compile with c++11
-g++ -std=c++11 test.cpp
-*/
+/*Erica wrote an increasing sequence of n numbers in her notebook. She considers a triplet to be beautiful if:
+i < j < k
+arr[j] - arr[i] = arr[k] - arr[j] == d */
 
 #include <iostream>
 #include <bits/stdc++.h>
