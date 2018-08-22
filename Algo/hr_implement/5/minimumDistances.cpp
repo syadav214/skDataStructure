@@ -1,7 +1,6 @@
-/* Compile with c++11
-g++ -std=c++11 test.cpp
+/*We define the distance between two array values as the number of indices between the two values. 
+Given , find the minimum distance between any pair of equal elements in the array.
 */
-
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
