@@ -1,23 +1,12 @@
-function minimumDistances(a) {
-  let minArray = [];
-  for (let i = 0; i < a.length; i++) {
-    for (let j = i + 1; j < a.length; j++) {
-      if (a[i] == a[j]) {
-        let diff = i - j;
-        if (diff < 0) {
-          diff = -1 * diff;
-        }
-        minArray.push(diff);
-      }
-    }
-  }
+var crypto = require('crypto');
 
-  if (minArray.length == 0) {
-    return -1;
-  } else {
-    return Math.min(...minArray);
-  }
-}
+console.log(crypto.getHashes());
 
-let a = [7, 1, 3, 4, 1, 7];
-console.log(minimumDistances(a));
+const fs = require('fs');
+
+const testfile = fs.readFileSync('test.cpp');
+var sha1sum = crypto
+  .createHash('sha1')
+  .update(testfile)
+  .digest('hex');
+console.log(sha1sum);
