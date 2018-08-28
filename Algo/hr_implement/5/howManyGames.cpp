@@ -1,6 +1,3 @@
-/* Compile with c++11
-g++ -std=c++11 test.cpp
-*/
 /*
 You wish to buy video games from the famous online video game store Mist.
 Usually, all games are sold at the same price, p dollars. 
