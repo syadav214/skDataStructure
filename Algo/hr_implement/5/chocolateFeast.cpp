@@ -1,5 +1,7 @@
-/* Compile with c++11
-g++ -std=c++11 test.cpp
+/*
+The first line contains an integer, t , denoting the number of test cases to analyze.
+Each of the next t lines contains three space-separated integers: n, c and m. 
+They represent money to spend, cost of a chocolate, and the number of wrappers he can turn in for a free chocolate. 
 */
 #include <iostream>
 #include <bits/stdc++.h>
@@ -21,7 +23,7 @@ int chocolateFeast(int n, int c, int m)
 
 int main()
 {
-    int n, c, m;
+    int n, c, m; //(10,2,5)  (12,4,4) (6,2,2)
     cin >> n;
     cin >> c;
     cin >> m;
