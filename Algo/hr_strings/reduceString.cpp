@@ -1,6 +1,3 @@
-/* Compile with c++11
-g++ -std=c++11 test.cpp
-*/
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
@@ -26,6 +23,7 @@ string superReducedString(string s)
 
 int main()
 {
+    //baab, aaabccddd
     cout << "Ans: " << superReducedString("baab") << endl;
     return 0;
 }
