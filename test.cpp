@@ -27,6 +27,7 @@ string pangrams(string s)
         if (m.count(alphabet[i]) == false)
         {
             allFound=false;
+            break;
         }
     }
     
