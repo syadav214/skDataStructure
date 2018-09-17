@@ -1,6 +1,5 @@
-/* Compile with c++11
-g++ -std=c++11 test.cpp
-*/
+// if same char repeats then add the weight of it and push to vector
+
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
