@@ -5,41 +5,26 @@ g++ -std=c++11 test.cpp
 #include <bits/stdc++.h>
 using namespace std;
 
-int gemstones(vector<string> arr)
+bool comp(string i, string j)
 {
-    int count = 0;
-    map<char, int> m;
+    int n = i.length();
+    int m = j.length();
+    // If length is same
+    if (n == m)
+        return (i < j);
 
-    for (int i = 0; i < arr.size(); i++)
-    {
-        bool insideLoop = false;
-        string s = arr[i];
-        map<char, int> mInside;
-        for (int j = 0; j < s.size(); j++)
-        {
-            mInside[s[j]]++;
-            // We will increment count only once for a string
-            if (mInside[s[j]] == 1)
-            {
-                m[s[j]]++;
-                if (m[s[j]] == arr.size())
-                {
-                    count++;
-                }
-                //cout << "ch: " << s[j] << " vl:" << m[s[j]] << endl;
-            }
-        }
-    }
+    return n < m;
+}
 
-    return count;
+vector<string> bigSorting(vector<string> unsorted)
+{
+    sort(unsorted.begin(),unsorted.end(),comp);
+    return unsorted;
 }
 
 int main()
 {
-    vector<string> arr;
-    arr.push_back("abcdde");
-    arr.push_back("baccd");
-    arr.push_back("eeabg");
-    cout << "Ans: " << gemstones(arr) << endl;
+    vector<string> unsorted({"345", "3", "23", "1", "3"});
+    cout << "Ans: " << bigSorting(unsorted)[0] << endl;
     return 0;
 }
