@@ -11,6 +11,7 @@ void printVect(int n, vector<int> arr)
     cout << endl;
 }
 
+// We have to move last element of the array to its sorted position
 void insertionSort1(int n, vector<int> arr)
 {
     int v = arr[n - 1];
