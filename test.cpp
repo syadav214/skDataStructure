@@ -5,41 +5,36 @@ g++ -std=c++11 test.cpp
 #include <bits/stdc++.h>
 using namespace std;
 
-void printArr(int n, vector<int> arr)
+// make left (less than 1st element), equal and right (greater than 1st element) arrays
+vector<int> quickSort(vector<int> arr)
 {
-    for (int i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-}
+    vector<int> right;
+    vector<int> finalArr;
 
-void insertionSort2(int n, vector<int> arr)
-{
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i < arr.size(); i++)
     {
-        if (i > 0)
+        if (arr[i] < arr[0])
         {
-            int num = arr[i];
-            for (int j = 0; j < i; j++)
-            {
-                //cout << i << " : " << j << endl;
-                if (arr[i] < arr[j])
-                {
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
-            }
-            printArr(n, arr);
+            finalArr.push_back(arr[i]);
+        }
+        else
+        {
+            right.push_back(arr[i]);
         }
     }
+
+    finalArr.push_back(arr[0]);
+
+    for (int i = 0; i < right.size(); i++)
+    {
+        finalArr.push_back(right[i]);
+    }
+    return finalArr;
 }
 
 int main()
 {
-    vector<int> arr({1, 4, 3, 5, 6, 2});
-    int n = arr.size();
-    insertionSort2(n, arr);
+    vector<int> arr({4, 5, 3, 7, 2});
+    quickSort(arr);
     return 0;
 }

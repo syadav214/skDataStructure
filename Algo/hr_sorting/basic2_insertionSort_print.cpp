@@ -22,6 +22,7 @@ void insertionSort2(int n, vector<int> arr)
 {
     for (int i = 0; i < n; i++)
     {
+        // not printing first time
         if (i > 0)
         {
             int num = arr[i];
