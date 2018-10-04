@@ -15,4 +15,5 @@ let max = a;
 */
 let min = a.slice(0, mid);
 let max = a.slice(mid);
+
 console.log(min, max);
