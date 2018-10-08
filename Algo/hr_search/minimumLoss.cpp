@@ -46,3 +46,27 @@ int main()
     cout << "Ans: " << minimumLoss(arr) << endl;
     return 0;
 }
+
+/*O(n2) Solution
+
+int minimumLoss(vector<long> price)
+{
+    long minLoss = LONG_MAX;
+
+    for (int i = 0; i < price.size(); i++)
+    {
+        for (int j = i + 1; j < price.size(); j++)
+        {
+            int diff = price[i] - price[j];
+            if (diff > 0 && minLoss > diff)
+            {
+                minLoss = diff;
+            }
+        }
+    }
+
+    return minLoss;
+}
+
+
+*/
