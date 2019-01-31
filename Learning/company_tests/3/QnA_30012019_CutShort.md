@@ -18,11 +18,15 @@
 
 ```bash
   let store = {a:1,b:2};
-  let dispatch = {};
+  let dispatch = 3;
   console.log({...store,dispatch})
 ```
 
-  A => It creates new object with all keys from store and dispatch.
+  A => It creates new object with all keys and values from store and the key 'dispatch' mapped to the object.
+
+* Q5. What is reason apps and frameworks are being built on top of immutable data structure?
+
+  A => Immutable data structures reduce the memory profile of applications and cut down on the amount of garbage that needs to be collected.
 
 
 
