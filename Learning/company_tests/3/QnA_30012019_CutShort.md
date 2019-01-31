@@ -1,31 +1,11 @@
-* Q1. What must be done in Javascript to implement Lexical scoping
+* Q1. What must be done in Javascript to implement Lexical scoping?
+
   A => Reference the current scope chain
 
-* Q2 . Fill the missing code
-```bash
-  const assert = require('assert');
+* Q2 . When browsers don't support a new feature developers turn to polyfills. How do these work>
 
-  function makeAdder(x) {
-   // Fill the line
-  }
+  A => A polyfill implements an API so that developers can build against a consistent interface even on unsupported browers.
 
-  var add5 = makeAdder(5);
-
-assert(add5(10) == 15);
-```
- A. 
- ```bash 
- const assert = require('assert');
- function makeAdder(x) {
-  return function(y) {
-    return x + y;
-  };
-}
-
-var add5 = makeAdder(5);
-
-assert(add5(10) == 15);
-```
 
 
 
