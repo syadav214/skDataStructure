@@ -1,20 +1,20 @@
-* Q1. What must be done in Javascript to implement Lexical scoping?
+- Q1. What must be done in Javascript to implement Lexical scoping?
 
   A => Reference the current scope chain
 
-* Q2. When browsers don't support a new feature developers turn to polyfills. How do these work>
+- Q2. When browsers don't support a new feature developers turn to polyfills. How do these work>
 
   A => A polyfill implements an API so that developers can build against a consistent interface even on unsupported browers.
 
-* Q3. Why does below quirks happen?
+- Q3. Why does below quirks happen?
 
 ```bash
   console.log(.1+.2); //0.30000000000000004
 ```
 
-  A => This is an inherent limitation of floating point that JS shares with other languages.
+A => This is an inherent limitation of floating point that JS shares with other languages.
 
-* Q4. what does the expression {...store, dispatch} do?
+- Q4. what does the expression {...store, dispatch} do?
 
 ```bash
   let store = {a:1,b:2};
@@ -22,12 +22,26 @@
   console.log({...store,dispatch})
 ```
 
-  A => It creates new object with all keys and values from store and the key 'dispatch' mapped to the object.
+A => It creates new object with all keys and values from store and the key 'dispatch' mapped to the object.
 
-* Q5. What is reason apps and frameworks are being built on top of immutable data structure?
+- Q5. What is reason apps and frameworks are being built on top of immutable data structure?
 
-  A => Immutable data structures reduce the memory profile of applications and cut down on the amount of garbage that needs to be collected.
+  A => Immutable data structures make it easy to detect when variable values or nested values has changed.
 
+- Q6. What is wrong in below code?
 
+```bash
+  class App extends Component {
+    updateMessage(e){
+      this.setState({msg:e.target.value});
+    }
 
+    render() {
+      return (
+        <input type='text' onChange={this.updateMessage}  value={this.state && this.state.msg}/>
+      );
+    }
+  }
+```
 
+  A => updateMessage is not bound properly, so that this.setState will be undefined.
