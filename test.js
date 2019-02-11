@@ -1,18 +1,12 @@
-let a = [5, -1, 3, 8, 6];
-a.sort();
-
-let mid = 0;
-if (a.length % 2 == 0) {
-  mid = a.length / 2;
-} else {
-  mid = (a.length + 1) / 2;
+let object1 = {
+  name:'abc',
+  items:[
+      {item_name:'123'},
+      {item_name:'456'}
+  ]
 }
 
-/*
-using splice
-let min = a.splice(0, mid);
-let max = a;
-*/
-let min = a.slice(0, mid);
-let max = a.slice(mid);
-console.log(min, max);
+for(let x in object1) {
+  console.log(object1[x],Array.isArray(object1[x]))
+}
+
