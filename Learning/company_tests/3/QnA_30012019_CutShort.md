@@ -6,13 +6,17 @@
 
   A => A polyfill implements an API so that developers can build against a consistent interface even on unsupported browers.
 
-- Q3. Why does below quirks happen?
+- Q3. How time it will take to execute below code?
 
 ```bash
-  console.log(.1+.2); //0.30000000000000004
+  setTimeout(()=>console.log('hi'),1000);
+  setTimeout(()=>console.log('hi'),1000);
+  setTimeout(()=>console.log('hi'),1000);
+  setTimeout(()=>console.log('hi'),1000);
+  setTimeout(()=>console.log('hi'),1000);
 ```
 
-A => This is an inherent limitation of floating point that JS shares with other languages.
+A => 1 second.(All execute at once.)
 
 - Q4. what does the expression {...store, dispatch} do?
 
