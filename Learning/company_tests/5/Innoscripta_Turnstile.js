@@ -1,11 +1,13 @@
+n = 5;
+time = [0, 1, 1, 3, 3];
+direction = [0, 1, 0, 0, 1];
+//ans 0 2 1 4 3
 
 n = 4;
 time = [0, 0, 1, 5];
 direction = [0, 1, 1, 0];
+//ans 2 0 1 5
 
-n = 5;
-time = [0, 1, 1, 3, 3];
-direction = [0, 1, 0, 0, 1];
 
 
 
@@ -40,14 +42,3 @@ for (let i = 0; i < time.length; i++) {
 }
 
 console.log(result);
-
-/*
-^ -start
-$ - end
-? - optional
-[] - range
-+ - followed by
-
-// passed with a alpha, optional _ followed by number
-^[a-z]*\((_?)+[0-9]?)@hackerrank.com$
-*/
