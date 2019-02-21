@@ -1,8 +1,0 @@
-^ -start
-$ - end
-? - optional
-[] - range
-+ - followed by
-
-// passed with a alpha, optional _ followed by number
-^[a-z]*\((_?)+[0-9]?)@hackerrank.com$
