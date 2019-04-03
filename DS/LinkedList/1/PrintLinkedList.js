@@ -1,28 +1,32 @@
-function Node(data, nextnode) {
-    this.data = data;
-    this.nextnode = nextnode;
-}
-
-function LinkedList() {
-    this.currnode = null;
-}
-
-LinkedList.prototype = {
-    addNode: function(data) {
-        var newNode = new Node(data, this.currnode);
-        this.currnode = newNode;
-    },
-    printList: function() {
-        node = this.currnode;
-        while (node) {
-            console.log(node.data);
-            node = node.nextnode;
-        }
+class Node {
+    constructor(data,next) {
+      this.data = data;
+      this.next = next;
     }
-}
-
-
-var li = new LinkedList();
-li.addNode(3);
-li.addNode(5);
-li.printList();
+  }
+  
+  class LinkedList {
+    constructor(currNode) {
+      this.currNode = null;
+    }
+  
+    addNode(data) {
+      const nd = new Node(data,this.currNode);
+      this.currNode = nd;
+      return this.currNode;
+    }
+  
+    printNode(nodes) {
+      while(nodes) {
+        console.log(nodes.data);
+        nodes = nodes.next;
+      }
+    }
+  }
+  
+  const li = new LinkedList();
+  li.addNode(11);
+  li.addNode(12);
+  const pNode = li.addNode(13);
+  li.printNode(pNode);
+  
