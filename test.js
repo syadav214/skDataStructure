@@ -1,31 +1,23 @@
-class Node {
-  constructor(data,next) {
-    this.data = data;
-    this.next = next;
-  }
+function a(x) {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(x), 2000);
+  });
 }
 
-class LinkedList {
-  constructor(currNode) {
-    this.currNode = null;
-  }
-
-  addNode(data) {
-    const nd = new Node(data,this.currNode);
-    this.currNode = nd;
-    return this.currNode;
-  }
-
-  printNode(nodes) {
-    while(nodes) {
-      console.log(nodes.data);
-      nodes = nodes.next;
-    }
-  }
+async function foo() {
+  const a1 = await a(1);
+  const a2 = await a(2);
+  return a1+a2;
 }
 
-const li = new LinkedList();
-li.addNode(11);
-li.addNode(12);
-const pNode = li.addNode(13);
-li.printNode(pNode);
+async function bar() {
+  const a1 = a(3);
+  const a2 = a(4);
+  return await a1+ await a2;
+}
+
+
+foo().then(console.log)
+bar().then(console.log)
+console.log(await foo());
+console.log(await bar());
