@@ -1,23 +1,24 @@
-
-def getResult(N, strength, energy):
-    result = "WIN"
-    for i in range(N):
-        if (strength[i] > energy[i]):
-            result = "LOSE"
-            break
-    
-    return result
-
 def main():
-
     T = int(input())
+
+    strength = [0 for i in range(T)]
+    energy = [0 for i in range(T)]
+
     for i in range(T):
         N = int(input())
-        strength = list(map(int, input().split()))
-        energy = list(map(int, input().split()))
-        strength.sort()
-        energy.sort()
-        print(getResult(N, strength, energy))
+        strength[i] = list(map(int, input().split()))
+        energy[i] = list(map(int, input().split()))
+
+    for i in range(T):
+        strength[i].sort()
+        energy[i].sort()
+        flag = 0
+        result = "WIN"
+        for j in range(len(energy[i])):
+            if energy[i][j] < strength[i][j]:
+                result = "LOSE"
+                break
+        print(result)
+
 
 main()
-
