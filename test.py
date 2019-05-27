@@ -1,42 +1,32 @@
-printMap = []
+mainSet = set()
 
-def getMaxSum(arr):
-    incl = 0
-    excl = 0
-    for i in arr:
-        if excl > incl:
-            new_excl = excl
+def checkUniqueDigits(wholeNumber):
+    print('wholeNumber',wholeNumber)
+    isValid = True
+    currSet = set(str(wholeNumber))
+    print('currSet',currSet)
+    if(currSet & mainSet):
+        isValid = False
+    mainSet.update(currSet)
+    print('mainSet',mainSet)
+    return isValid
+
+
+#arr = [3, 5, 7, 2]
+#arr = [121, 23, 3, 333, 4]
+#arr = [32, 42, 52, 62, 72, 82, 92]
+arr =[1090, 1080, 1074, 1065, 1057, 1056, 1047, 1041, 1041, 1038, 1025, 1013, 1008, 992, 991, 991, 991, 978, 977, 959, 945, 935, 925, 925, 923, 915, 908, 904, 901, 901, 900, 897, 894, 882, 880, 876, 866, 854, 849, 849, 833, 818, 818, 812, 811, 809, 798, 794, 793, 788, 772, 763, 747, 746, 743, 737, 736, 734, 732, 730, 728, 718, 714, 713, 706, 701, 699, 691, 690, 689, 681, 672, 663, 656, 654, 653, 652, 651, 646, 644, 640, 637, 637, 635, 634, 633, 630, 625, 621]
+
+arr.sort(reverse=True)
+
+for x in range(10):
+    maxSum = 0    
+    for i in range(len(arr)):
+        if i == 0:
+            checkUniqueDigits(arr[i])
+            maxSum = arr[i]
         else:
-            new_excl = incl
-        incl = excl + i
-        excl = new_excl
-        printMap.append([incl, excl])
-    return (excl if excl > incl else incl)
-
-#arr = [0, -1, -2, 0, 0, 0]
-#arr = [1, -1, 0, 7, 8, -5, 4]
-#arr = [-1, 7, 8, -5, 0, 4]
-#arr = [-1, 7, 8, -5, 4]
-#arr = [3, 2, 1, -1]
-#arr = [11, 12, -2, -1]
-#arr = [3, 4, 5, 4]
-arr = [4, 5, 4, 3]
-#arr = [0,0,0]
-#arr = [5, 10, 4, -1]
-#arr = [2,3,1,4,5]
-
-totalSum = getMaxSum(arr)
-
-printDict = {}
-for printIndex in reversed(range(0, len(printMap))):
-    if printMap[printIndex][0] > printMap[printIndex][1]:
-        printDict[printMap[printIndex][0]] = printIndex
-    else:
-        printDict[printMap[printIndex][1]] = printIndex
-
-finalArr = []
-while totalSum > 0:
-    printIndex = printDict[totalSum]
-    totalSum = totalSum - arr[printIndex]
-    finalArr.append(arr[printIndex])
-print(''.join(map(str, finalArr)))
+            if(checkUniqueDigits(arr[i])):
+                maxSum += arr[i]
+    arr.pop(0)
+    print(maxSum)
