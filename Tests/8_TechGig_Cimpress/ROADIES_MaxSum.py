@@ -1,30 +1,39 @@
+def checkDigits(numArr, chkNum):
+    for num in numArr:
+        for val in str(num):
+            if val in str(chkNum):
+                return True
+                break
+    return False
+
+
 def main():
     T = int(input())
 
     for i in range(T):
         N = int(input())
         arr = list(map(int, input().split()))
-
-        mainSet = set()
-
-        def checkUniqueDigits(wholeNumber):
-            isValid = True
-            currSet = set(str(wholeNumber))
-            if(currSet & mainSet):
-                isValid = False
-            mainSet.update(currSet)
-            return isValid
-
-        maxSum = 0
+        arr = list(set(arr))
         arr.sort(reverse=True)
-
-        for i in range(len(arr)):
-            if i == 0:
-                checkUniqueDigits(arr[i])
-                maxSum = arr[i]
+        combineArr = []
+        maxSum = 0
+        for n in arr:
+            if(len(combineArr) > 0):
+                for cb in combineArr:
+                    if(checkDigits(cb, n) == False):
+                        newCombineArr = []
+                        newCombineArr.extend(cb)
+                        newCombineArr.append(n)
+                        combineArr.append(newCombineArr)
             else:
-                if(checkUniqueDigits(arr[i])):
-                    maxSum += arr[i]
+                combineArr.append([])
+                combineArr.append([n])
+
+        for cb in combineArr:
+            if(len(cb) > 0):
+                currSum = sum(cb)
+                if(currSum > maxSum):
+                    maxSum = currSum
 
         print(maxSum)
 
