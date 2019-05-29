@@ -1,5 +1,7 @@
 def checkDigits(numArr, chkNum):
     for num in numArr:
+        # converts into an array like 123 will become str(num) = [1,2,3]
+        # then check with given number
         for val in str(num):
             if val in str(chkNum):
                 return True
@@ -22,10 +24,12 @@ def main():
                 for cb in combineArr:
                     if(checkDigits(cb, n) == False):
                         newCombineArr = []
+                        # get current array and append current num
                         newCombineArr.extend(cb)
                         newCombineArr.append(n)
                         combineArr.append(newCombineArr)
             else:
+                # create combination
                 combineArr.append([])
                 combineArr.append([n])
 

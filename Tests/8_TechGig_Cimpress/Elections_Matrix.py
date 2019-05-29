@@ -6,30 +6,24 @@ def main():
         phases = list(map(int, input().split()))
         states = list(map(int, input().split()))
 
-        c = len(states)
-        matrixScore = []
+        maxInPhases = max(phases)
+        totInPhases = sum(phases)
+        possibleWinInPhase = 0
+        for i in phases:
+            if(i > 0):
+                possibleWinInPhase += 1
 
-        for ri in phases:
-            tempArr = []
-            mod = ri % c
-            if(mod == 0):
-                tempArr.extend([ri/c for i in range(c)])
-            else:
-                num = (ri - mod) / c
-                tempArr.extend([num for i in range(c)])
-                tempArr[len(tempArr)-1] = mod
-            matrixScore.append(tempArr)
+        maxInStates = max(states)
+        totInStates = sum(states)
+        possibleWinInState = 0
+        for j in states:
+            if(j > 0):
+                possibleWinInState += 1
 
-        result = 'YES'
-        for i in range(c):
-            getSum = 0
-            for xyz in matrixScore:
-                getSum += xyz[i]
-            if(getSum != states[i]):
-                result = 'NO'
-                break
-
-        print(result)
+        if(totInPhases == totInStates and possibleWinInPhase >= maxInStates and possibleWinInState >= maxInPhases):
+            print('YES')
+        else:
+            print('NO')
 
 
 main()
