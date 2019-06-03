@@ -10,7 +10,7 @@ def main():
         totInPhases = sum(phases)
         totInStates = sum(states)
 
-        if(T==2):
+        if(T==2): ## score only 10
             c = len(states)
             matrixScore = []
 
@@ -43,3 +43,22 @@ def main():
 
 
 main()
+
+"""
+phases = [3, 1, 0]
+states = [2, 2, 0]
+phases = [4, 3, 1]
+states = [3, 2, 3]
+phases = [3, 1, 3]
+states = [3, 3, 1]
+phases = [0, 1, 2, 2]
+states = [2, 3]
+phases = [2, 1, 0]
+states = [1, 2]
+phases = [3, 2, 1]
+states = [1, 2, 2]
+phases = [3, 0, 0]
+states = [3, 0, 0]
+phases = [1, 0, 0]
+states = [0, 0, 0]
+""""
