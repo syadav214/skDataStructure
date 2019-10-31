@@ -1,18 +1,17 @@
-const fs = require('fs');
-const allFolderName = [];
-fs.readFile('test2.csv', (err, data) => {
-  const filedata = data.toString().split('\n');
-  filedata.map(ele => {
-    const singleEleArr = ele.split(',');
-    if (singleEleArr[1] && singleEleArr[1].indexOf('/') > 0) {
-      const folderName = singleEleArr[1].substring(
-        0,
-        singleEleArr[1].indexOf('/')
-      ).replace(`"`,'');
-      if (allFolderName.includes(folderName) === false) {
-        allFolderName.push(folderName);
-      }
-    }
-  });
-  console.log(allFolderName);
+const numbers = [1, 2, 3, 4, 5, 1, 2, 3, 1, 2];
+
+const numMap = {};// OR const numMap = new Map();
+numbers.map(ele => {
+  if (numMap[ele]) {
+    numMap[ele]++;
+  } else {
+    numMap[ele] = 1;
+  }
 });
+let count = 0;
+for (const c in numMap) {
+  if (numMap[c] >= 2) {
+    count++;
+  }
+}
+console.log({ numMap, count });
