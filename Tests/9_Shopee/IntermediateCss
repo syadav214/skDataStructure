@@ -1,0 +1,38 @@
+1. How react compare difference
+
+
+2. Diff display none, visibility hidden, and opacity 0
+opacity: 0              No     Yes     Yes
+visibility: hidden      No     No      No
+visibility: collapse    *      No      No
+display: none          Yes     No      No
+
+* Yes inside a table element, otherwise No.
+
+3. <style>
+    #a {
+        background: green;
+    }
+
+    .c {
+        background: yellow;
+    }
+
+    .b {
+        background: blue;
+    }
+
+    div {
+        background: red;
+    }
+</style>
+
+<div id="a"  class="b c" style="background:black;">
+    Hello
+</div>
+
+What is the color? : black
+hierachy=> inline, id, class, tag
+
+
+4. 
