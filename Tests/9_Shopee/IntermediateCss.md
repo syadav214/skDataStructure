@@ -1,4 +1,5 @@
 1. How react compare difference
+Ans: Filename=> reactExplained.md
 
 
 2. Diff display none, visibility hidden, and opacity 0
@@ -32,7 +33,17 @@ display: none          Yes     No      No
 </div>
 
 What is the color? : black
-hierachy=> inline, id, class, tag
+Ans: hierachy=> inline, id, class, tag
 
 
-4. 
+4. div {
+    padding: 10px;
+    margin: 20px;
+    border: 5px solid black;
+    width: 100px;
+}
+
+Ans: padding is inside the element. margin is outside the element.
+     if border is of 5px, then padding will start from 5px to inwards and margin will start from 0px to outwards.
+
+
