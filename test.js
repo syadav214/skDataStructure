@@ -1,17 +1,27 @@
-const numbers = [1, 2, 3, 4, 5, 1, 2, 3, 1, 2];
+let arr = [10, 7, 12]; //[2, 2, 7, 3]
+let count = 0,
+  allSame = false;
 
-const numMap = {};// OR const numMap = new Map();
-numbers.map(ele => {
-  if (numMap[ele]) {
-    numMap[ele]++;
-  } else {
-    numMap[ele] = 1;
-  }
-});
-let count = 0;
-for (const c in numMap) {
-  if (numMap[c] >= 2) {
-    count++;
+while (allSame === false) {
+  arr = arr.sort((a, b) => a - b);
+  const max = arr[arr.length - 1];
+  const min = arr[0];
+
+  let diff = max - min;
+
+  diff = diff > 4 ? 5 : diff < 4 && diff > 1 ? 2 : 1;
+
+  arr = arr.map(ele => (ele === max ? ele : ele + diff));
+
+  const firstVal = arr[0];
+  count++;
+  for (let i = 1; i < arr.length; i++) {
+    if (firstVal !== arr[i]) {
+      allSame = false;
+      break;
+    } else {
+      allSame = true;
+    }
   }
 }
-console.log({ numMap, count });
+console.log('count', count);
