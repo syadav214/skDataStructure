@@ -3,10 +3,11 @@ Ans: Filename=> reactExplained.md
 
 
 2. Diff display none, visibility hidden, and opacity 0
-opacity: 0              No     Yes     Yes
-visibility: hidden      No     No      No
-visibility: collapse    *      No      No
-display: none          Yes     No      No
+                        collapse events taborder
+opacity: 0              No       Yes     Yes
+visibility: hidden      No       No      No
+visibility: collapse    *        No      No
+display: none          Yes       No      No
 
 * Yes inside a table element, otherwise No.
 
