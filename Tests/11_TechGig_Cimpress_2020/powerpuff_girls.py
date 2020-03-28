@@ -19,4 +19,5 @@ main()
 2 5 6 3
 20 40 90 50
 Output: 8
+Get the output from which minimum can be produced from each
 """
