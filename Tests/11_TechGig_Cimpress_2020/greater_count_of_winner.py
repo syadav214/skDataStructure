@@ -10,9 +10,7 @@ def main():
         count = 0
         i = 0
         j = 0
-        while True:
-            if(i > N -1):
-                break            
+        while i < N:          
             if(gTeam[i] > oTeam[j]):
                 count +=1
                 i +=1
