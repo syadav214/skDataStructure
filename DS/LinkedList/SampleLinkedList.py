@@ -13,6 +13,11 @@ class SLinkedList:
             print(val.dataval)
             val = val.nextval
 
+    def AtBegining(self,newdata):
+        NewNode = Node(newdata)
+        NewNode.nextval = self.headval
+        self.headval = NewNode
+
 list1 = SLinkedList()
 for i in range(10):
     e = Node(i)
