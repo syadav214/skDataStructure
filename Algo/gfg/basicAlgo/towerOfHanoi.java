@@ -1,5 +1,5 @@
 
-public class test {
+public class towerOfHanoi {
     public static void main(String[] args) {
         int n = 4; // Number of disks
         // A is where it is placed currently, C is where it to be place
