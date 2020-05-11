@@ -29,6 +29,7 @@ class heightOfTree {
         q.add(root);
 
         int i = 1;
+        // 10 20 30 40 60 N N
         while (q.size() > 0 && i < ip.length) {
             Node currNode = q.peek();
             q.remove();
@@ -50,25 +51,44 @@ class heightOfTree {
             }
             i++;
         }
+        
         return root;
     }
 
-    static void printInorder(Node root) {
+    static void printInOrder(Node root) {
         if (root == null)
             return;
 
-        printInorder(root.left);
+        printInOrder(root.left);
         System.out.print(root.data + " ");
-        printInorder(root.right);
+        printInOrder(root.right);
+    }
+
+    static void printPreOrder(Node root) {
+        if (root == null)
+            return;
+
+        System.out.print(root.data + " ");
+        printPreOrder(root.left);
+        printPreOrder(root.right);
+    }
+
+    static void printPostOrder(Node root) {
+        if (root == null)
+            return;
+
+        printPostOrder(root.left);
+        printPostOrder(root.right);
+        System.out.print(root.data + " ");
     }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int t = Integer.parseInt(br.readLine());
         while (t-- > 0) {
-            String s = br.readLine();
+            String s = br.readLine(); // s = 10 20 30 40 60 N N
             Node root = buildTrNode(s);
-            //printInorder(root);
+            // printPostOrder(root);
             Tree g = new Tree();
             System.out.println(g.height(root));
 
@@ -77,7 +97,19 @@ class heightOfTree {
 }
 
 class Tree {
+    // height or depth
     int height(Node node) {
-        return 1;
+        if (node == null) {
+            return 0;
+        }
+
+        int lHeight = height(node.left);
+        int rHeight = height(node.right);
+        if (lHeight > rHeight) {
+            return lHeight + 1;
+        } else {
+            return rHeight + 1;
+        }
     }
 }
+//https://www.youtube.com/watch?v=TQI_m32_AeU
