@@ -28,12 +28,12 @@ class Solution {
         return validate(root, null, null);
     }
     
-    public boolean validate(TreeNode root, Integer leftVal, Integer rightVal){
+    public boolean validate(TreeNode root, Integer max, Integer min){
         if(root==null){
             return true;
-        } else if((leftVal != null && root.val >= leftVal) ||(rightVal!= null && root.val <= rightVal)){
+        } else if((max != null && root.val >= max) ||(min!= null && root.val <= min)){
             return false;
         }
-        return validate(root.left, root.val, rightVal) && validate(root.right, leftVal, root.val);
+        return validate(root.left, root.val, min) && validate(root.right, max, root.val);
     }
 }
