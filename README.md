@@ -1,3 +1,3 @@
-Programs in Java, JavaScript and Python to practice Algorithm and DataStructure 
+Practice DataStructure and Algorithm Problems
 
-©Copyright Santosh Yadav [https://github.com/syadav214]. All Rights Reserved.
+©Copyright Santosh Yadav [https://github.com/syadav214]. No Rights Reserved.
